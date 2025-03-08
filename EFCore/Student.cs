@@ -14,7 +14,10 @@ namespace EFCorePractice.Entities
         public string? Address { get; set; }
         public int? Age { get; set; }
 
-        
+        public int? DepartmentId { get; set; } //FK
+        public Department Department { get; set; }
+
+        public ICollection<StudentCourse> Courses { get; set; } = new HashSet<StudentCourse>();
     }
 
 }
