@@ -13,7 +13,13 @@ namespace EFCorePractice.Configurations
     {
         public void Configure(EntityTypeBuilder<Instructor> builder)
         {
-            builder.HasKey(IC =>new { IC.CourseId, IC.InstructorId })
+            builder.property(I => I.Salary).HascolumnType("decimal(10,3)");
+            builder.property(I => I.HourRate).HascolumnType("decimal(10,4)");
+            builder.property(I => I.Address).HascolumnType("Damnhour");
+            builder.pro
+        }
+    }
+}
         }
     }
 }

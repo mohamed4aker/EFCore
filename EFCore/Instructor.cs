@@ -16,6 +16,11 @@ namespace EFCorePractice.Entities
         public string? Address { get; set; }
         public double HourRate { get; set; }
 
-       
+        [InverseProperty(nameof(Department.ManagerId))] 
+        public Department MangeDepartment { get; set; }
+        [ForeignKey(nameof(WorkForDepartment))]
+        public int ?DepartmetId { get; set; }
+        public Department WorkForDepartment { get; set; }
+        public ICollection<InstructorCourse> instructorCourses{ get; set; }= new HashSet<InstructorCourse>();
     }
 }

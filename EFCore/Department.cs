@@ -12,6 +12,12 @@ namespace EFCorePractice.Entities
         public int Id { get; set; }
         public string? Name { get; set; }
         public DateTime HiringDate { get; set; }
+        [ForeignKey(nameof (ManagerId))]
+        public int ManagerId { get; set; }
+        public Instructor Instructor { get; set; }
+        public ICollection<Instructor> instructors = new HashSet<Instructor>();
+        public ICollection<Student> students = new HashSet<Student>();
+            
 
     }
 }

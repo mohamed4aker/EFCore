@@ -13,6 +13,10 @@ namespace EFCorePractice.Entities
         public string name { get; set; }
         public string? description { get; set; }
         public int? duration { get; set; }
+        [ForeignKey(nameof(Topic))]
+        public int? TopicId { get; set; }
+        public ICollection<StudentCourse> StudentCourses { get;set; }=new HashSet<StudentCourse>();
+        public ICollection<InstructorCourse> Courses { get; set; }=new HashSet<InstructorCourse>();
 
     }
 }

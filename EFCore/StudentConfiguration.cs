@@ -10,13 +10,11 @@ using System.Threading.Tasks;
 
 namespace EFCorePractice.Configurations
 {
-    internal class CourseConfigurations : IEntityTypeConfiguration<Course>
+    internal class StudentConfigurations : IEntityTypeConfiguration<Student>
     {
-        public void Configure(EntityTypeBuilder<Course> builder)
+        public void Configure(EntityTypeBuilder<Student> builder)
         {
-            builder.HasOne(c => c.Topic).WithMany(T => T.Courses)
-                .HasForeignKey(c => c.TopicId).IsRequired(false)
-                .OnDelete(deleteBehavior: DeleteBehavior.Cascade);
+            builder.Property(S => S.Address).HasDefaultValue("Cairo");
         }
     }
 }
