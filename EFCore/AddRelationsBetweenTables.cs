@@ -312,7 +312,7 @@ namespace EFCorePractice.Migrations
                 oldClrType: typeof(int),
                 oldType: "int")
                 .Annotation("SqlServer:Identity", "1, 1")
-                .OldAnnotation("SqlServer:Identity", "10, 10");
+                .OldAnnotation("SqlServer:Identity", "11, 10");
         }
     }
 }
